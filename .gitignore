@@ -1,32 +1,43 @@
-# Prerequisites
-*.d
+#include <iostream>
+using namespace std;
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+string getMention(int grade) {
+	if (grade >= 90) {
+		return " Excellent ";}
 
-# Precompiled Headers
-*.gch
-*.pch
+	else if (grade >= 75) {
+		return "Very good";}
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+	else if (grade >=60){
+		return "Good";}
 
-# Fortran module files
-*.mod
-*.smod
+	else if (grade >=50) {
+		return "Pass";}
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+     else {
+	 return "Fail";
+	}
 
-# Executables
-*.exe
-*.out
-*.app
+}
+
+
+	int main() {
+
+		int studentGrade;
+		cout << " =====================================" << endl;
+
+		cout << "Enter the student's grade: ";
+		cin >> studentGrade;
+
+		cout << " ---------------------------------------" << endl;
+		string mention = getMention(studentGrade);
+
+
+		cout << "The student's mention is: " << mention << endl;
+
+		cout << " ---------------------------------------" << endl;
+
+
+		cin.ignore();
+		return 0;
+	}
